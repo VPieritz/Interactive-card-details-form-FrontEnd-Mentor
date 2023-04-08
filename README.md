@@ -1,3 +1,15 @@
+Welcome :)
+This is a project made for study purposes. It was provided by Frontend Mentor, and you can check the challenge at https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw. There you can find all the information and help you may need. The main goal is to build an interactive card details form that looks as close to the design as possible.
+
+Please, if you find any bugs or have any suggestions, report them. I also chose not to use the Luhn algorithm to validate the card number, as it would make testing much more difficult and take the focus off the study.
+
+To see how it works, just open index.html in any browser.
+
+Below you can find the original README.md by Frontend Mentor.
+
+
+
+
 # Frontend Mentor - Interactive card details form
 
 ![Design preview for the Interactive card details form coding challenge](./design/desktop-preview.jpg)
