@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+  --Red: hsl(0, 100%, 66%);
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+}
+
+.cards_section {
+    background-image: url('images/bg-main-desktop.png');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    position: relative;
+    width: 40%;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 2rem;
+    left: 100%;
+    transform: translate(-50%,-50%);
+    top: 50%;
+  }
+
+.card_front {
+    position: relative;
+    transform: translateX(-100px);
+}
+
+.card_logo {
+    left: 1rem;
+    position: absolute;
+    top: 1rem;
+}
+
+#number {
+    bottom: 5rem;
+    color: var(--White);
+    left: 1rem;
+    letter-spacing: 2px;
+    position: absolute;
+}
+
+.card_initial {
+    bottom: 2rem;
+    color: var(--White);
+    display: flex;
+    justify-content: space-between;
+    left: 1rem;
+    position: absolute;
+    right: 3rem;
+}
+
+.back_card {
+    position: relative;
+}
+
+.error {
+    border: 2px solid var(--Red);
+}
+
+.error_message {
+    gap: 0;
+}
+
+.error_message::after {
+    color: var(--Red);
+    content: "can't be blank";
+    margin-top: .2rem;
+}
+
+.error_fill {
+    gap: 0;
+}
+
+.error_fill::after {
+    color: var(--Red);
+    content: "fill it all";
+    margin-top: .2rem;
+}
+
+#cvc {
+    color: var(--Light-grayish-violet);
+    position: absolute;
+    right: 3.5rem;
+    top: 7rem;
+}
+
+.form_section {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 350px;
+}
+
+label {
+    color: var(--Very-dark-violet);
+    margin-bottom: .3rem;
+    text-transform: uppercase;
+}
+
+input {
+    border: 1px solid var(--Dark-grayish-violet);
+    border-radius: 6px;
+    font-size: 18px;
+    padding: .5rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    margin: 0;
+    -webkit-appearance: none;
+}
+
+input::placeholder {
+    color: var(--Dark-grayish-violet);
+    font-family: inherit;
+}
+
+input:focus {
+    outline-color: hsl(249, 99%, 64%);
+}
+
+.form_name {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 span;
+}
+
+.form_number {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 span;
+}
+
+.form_cvc{
+    display: flex;
+    flex-direction: column;
+    grid-column: 1 span;
+}
+
+.card_information_date {
+     display: flex;
+     gap: 1rem;
+    grid-column: 2 span;
+}
+
+#card_exp_date {
+    display: flex;
+    flex-direction: column;
+     grid-column: 1 span;
+}
+
+#card_exp_date .two_inputs {
+    display: flex;
+}
+
+.two_inputs div {
+    flex-direction: column;
+}
+
+#card_exp_date div input {
+    margin-inline: .5rem;
+    margin-left: 0;
+    width: 70px;
+}
+
+#cvc_input {
+  width: 100%;
+}
+
+form button {
+    background: var(--Very-dark-violet);
+    border-radius: 6px;
+    color: var(--White);
+    cursor: pointer;
+    font-size: 18px;
+    grid-column: 2 span;
+    height: 50px;
+}
+
+.submitted {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    width: 350px;
+}
+
+.submitted h1 {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.submitted p {
+    color: var(--Dark-grayish-violet);
+    font-size: 18px;
+}
+
+.submitted button {
+    background-color: var(--Very-dark-violet);
+    border-radius: 6px;
+    color: var(--White);
+    cursor: pointer;
+    font-size: 18px;
+    padding: 1rem;
+    width: 100%;
+}
+
+@media screen and (max-width: 1023px) {
+  .card_front .card_container img,
+  .card_front,
+  .back_card img,
+  .back_card {
+    width: 300px;
+  }
+  .card_logo {
+    width: 50px;
+  }
+  #number {
+    font-size: 1.1rem;
+  }
+  #cvc {
+    top: 42%;
+    right: 12%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    flex-direction: column;
+  }
+  .card_front .card_container img,
+  .card_front,
+  .back_card img,
+  .back_card {
+    width: 280px;
+  }
+  .cards_section {
+    width: 100%;
+    min-height: 30vh;
+    background-image: url('images/bg-main-mobile.png');
+  }
+  .cards {
+    flex-direction: column-reverse;
+    left: 61%;
+    top: 60%;
+    gap: 0;
+  }
+  .back_card {
+    transform: translateY(70px);
+  }
+  .card_front {
+    z-index: 100;
+  }
+  .form_section {
+    margin-top: 6rem;
+  }
+}
